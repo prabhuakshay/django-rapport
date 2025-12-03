@@ -4,7 +4,10 @@ version = "0.1.0"
 description = "Django report runner."
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "django>=5.2.9",
+    "django-environ>=0.12.0",
+]
 
 [dependency-groups]
 dev = [

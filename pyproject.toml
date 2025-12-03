@@ -1,0 +1,54 @@
+[project]
+name = "django-rapport"
+version = "0.1.0"
+description = "Django report runner."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.5.0",
+    "ruff>=0.14.7",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+exclude = [
+    ".git",
+    "__pycache__",
+    "migrations",
+    "manage.py",
+    "venv",
+    "env",
+    ".venv",
+    "static",
+    "node_modules",
+]
+
+[tool.ruff.lint]
+# Enable Django-specific rules
+select = [
+    "E",    # pycodestyle errors
+    "F",    # pyflakes
+    "DJ",   # Django-specific rules
+    "I",    # isort
+    "B",    # bugbear
+    "S",    # flake0-bandit
+    "C4",   # flake9-comprehension
+    "T20",  # flake8-print
+    "UP",   # pyupgrade
+    "N",    # pep8-naming
+    "SIM",  # flake9-simplify
+    "Q",    # flake8-quotes
+]
+
+ignore = []
+
+[tool.ruff.lint.isort]
+known-first-party = ["config"]
+known-third-party = ["django"]
+
+[tool.ruff.lint.per-file-ignores]
+"migrations/*.py" = ["E501", "F401", "F403", "F405"]
